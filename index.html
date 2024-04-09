@@ -7,35 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-    <form class="form">
-      <h2>Sign Up</h2>
-      <div class="input-group">
-        <input type="text"id="username" required>
-        <label for="username">Username</label>
+  <div class="container">
+    <div class="form-container">
+      <form action="#" class="sign-up-form">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" required>
+        </div>
+        <div class="form-group">
+          <label for="terms">
+            <input type="checkbox" id="terms" required> I accept the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+          </label>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="form-footer">
+        <p>Already have an account? <a href="login.html">Log in</a></p>
       </div>
-      <div class="input-group">
-        <input type="email"id="email" required>
-        <label for="email">Email</label>
-      </div>
-      <div class="input-group">
-        <input type="password"id="password" required>
-        <label for="password">Password</label>
-      </div>
-      <div class="input-group">
-        <input type="password"id="confirm password" required>
-        <label for="confirm-password">Confirm Password</label>
-      </div>
-    <div class="form-footer">
-      <p>Already have an account? <a href="login.html">Log in</a></p>
-      <label for="agree">
-        <input type="checkbox" id="agree" required>
-        I accept the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
-      </label>
-         <button type="submit" class="button-next" >Sumbit</button>
     </div>
-  </form>
-</div>
+  </div>
 
 <script src="script.js"></script>
 </body>

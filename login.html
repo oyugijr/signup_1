@@ -4,61 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login-form</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-                <h3 class="text-center">Login</h3>
-                <form id="login-form">
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter password" required>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="remember">
-                    <label class="form-check-label" for="remember">Remember me</label>
-                      </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-block">Login</button>
-                </form>
-              </div>
-            <div class="form-footer">
-                <div class="text-center mt-3">
-                    <a href="#">Forgot password?</a>
-                </div>
-                <div class="text-center">
-                  Don't have an account? <a href="index.html">Sign up</a>
-                </div>
-            </div>
-              </div>
-            </div>
-          </div>
+  <div class="container">
+    <div class="form-container">
+      <form action="#" class="log-in-form">
+        <h2>Log In</h2>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
         </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+      <div class="form-footer">
+        <p>Don't have an account? <a href="index.html">Sign up</a></p>
       </div>
+    </div>
+  </div>
+  <script src="script.js">
+    const logInForm = document.querySelector('.log-in-form');
 
-      <script>
-        const loginForm = document.getElementById('login-form');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
+logInForm.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-loginForm.addEventListener('submit', (event) => {
-  event.preventDefault();
+  const email = logInForm.querySelector('#email').value.trim();
+  const password = logInForm.querySelector('#password').value.trim();
 
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
+  if (email === '' || password === '') {
+    alert('Please fill in all fields');
+    return;
+  }
 
-  // Perform login logic here
+  // Send form data to server
+  const formData = new FormData();
+  formData.append('email', email);
+  formData.append('password', password);
 
-  // Clear form inputs
-  emailInput.value = '';
-  passwordInput.value = '';
+  fetch('/log-in', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert('Log in successful');
+      // Redirect to homepage or dashboard
+      window.location.href = '/';
+    } else {
+      alert(data.message);
+    }
+  })
+  .catch(error => {
+    console.error(error);
+    alert('An error occurred while logging in');
+  });
 });
-      </script>
+  </script>
 </body>
 </html>
