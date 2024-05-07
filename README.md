@@ -1,6 +1,6 @@
 # Sign Up Form
 
-This is a simple sign up form built with HTML, CSS, and JavaScript. It allows users to create a new account, log in to an existing account, or reset a forgotten password.
+This is a simple sign up form built with HTML, CSS, and JavaScript. It allows users to create a new account, log in to an existing account.
 
 ## Features
 
@@ -29,7 +29,6 @@ To use the sign up form, simply open the `index.html` file in a web browser. Fro
 If you'd like to contribute to the sign up form project, please follow these guidelines:
 
 - Code style: Follow the existing code style and conventions
-- Testing: Write unit tests for any new features or changes
 - Pull requests: Submit pull requests against the `main` branch
 
 ## License
