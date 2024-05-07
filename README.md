@@ -18,8 +18,7 @@ This is a simple sign up form built with HTML, CSS, and JavaScript. It allows us
 To install and run the sign up form locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/oyugijr/signup.git`
-2. Install dependencies: `npm install`
-3. Start a local server: `npm start`
+2. Run the index. html
 
 ## Usage
 
